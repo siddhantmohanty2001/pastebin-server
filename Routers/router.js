@@ -34,11 +34,29 @@ router.get('/get',async (req,res)=>{
     res.send(result);
 })
 
+// For logs
+router.get('/getLogs',async (req,res)=>{
+  const result=await Log.find();
+ 
+
+  res.send(result);
+})
+
+
 router.post('/post',async (req,res)=>{
     console.log(req.body)
     const newSnippet=new Snippet(req.body);
     const result=await newSnippet.save();
     res.send(result);
+})
+
+
+//For logs
+router.post('/postLogs',async (req,res)=>{
+  console.log(req.body)
+  const newLog=new Log(req.body);
+  const result=await newLog.save();
+  res.send(result);
 })
 
 router.delete('/delete',async (req,res)=>{

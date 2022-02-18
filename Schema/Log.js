@@ -4,11 +4,10 @@ const Schema = mongoose.Schema;
 
 const logSchema = new Schema({
     
-  id: String,
-  
+  slug: String,
   date: Date,
   ip: String,
 });
 
-const Snippet =mongoose.models.Snippet ||mongoose.model("Snippet", logSchema);
-module.exports =Snippet;
+const Log =mongoose.models.Log ||mongoose.model("Log", logSchema);
+module.exports =Log;
